@@ -30,5 +30,5 @@ md5加密
 #统计，友盟统计
 npm install vue-uweb --save
 ```
-
+dev_leying
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
