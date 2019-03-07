@@ -6,12 +6,11 @@
 
 <script>
 export default {
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
 
-  mounted(){},
+  mounted() {},
 
   methods: {},
 
@@ -20,9 +19,8 @@ export default {
   computed: {},
 
   components: {}
-}
+};
 </script>
 
 <style lang='scss' scoped>
-
 </style>

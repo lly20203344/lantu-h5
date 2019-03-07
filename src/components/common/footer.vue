@@ -1,27 +1,22 @@
 <template>
   <div class="nav-tab">
-    <ul>
-        <li>
-            <router-link to="">首页</router-link>
-        </li>
-        <li>
-            <router-link to="product">项目</router-link>
-        </li>
-        <li>
-            <router-link to="">我的</router-link>
-        </li>
-    </ul>
+    <van-tabbar v-model="active">
+      <van-tabbar-item icon="contact" to="/home">首页</van-tabbar-item>
+      <van-tabbar-item icon="search" to="/product">标签</van-tabbar-item>
+      <van-tabbar-item icon="setting-o" to="/user">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-    }
+      active: 0,
+    };
   },
 
-  mounted(){},
+  mounted() {},
 
   methods: {},
 
@@ -30,24 +25,8 @@ export default {
   computed: {},
 
   components: {}
-}
+};
 </script>
 
 <style lang='scss' scoped>
-.nav-tab{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    ul{
-        display: flex;
-        width: 100%;
-        height: 100%;
-    }
-    li{
-        flex: 1;
-        line-height: 45px;
-        text-align: center;
-    }
-}
 </style>

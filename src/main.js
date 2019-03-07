@@ -6,12 +6,17 @@ import Vuex from 'vuex'
 import App from './App'
 import Vant from 'vant'
 import Axios from 'axios'
-import './utils/vconsole' // 手机端调试工具
+import './utils/rem'
+import './assets/css/reset.css'
+import './assets/css/icon-font.css' //字体图标库
 import 'vant/lib/index.css'
 import uweb from "vue-uweb" // 友盟
 import router from './router'
 import store from './store/store'
+import transmit from './utils/transmit'     //同组件传值
 import { callApp } from './utils/jsBrige' // js与app之间的交互
+// process.env.MOCK && require('./utils/vconsole') // 手机端调试工具
+process.env.MOCK && require('./mock/mock.js')
 
 Vue.use(Vuex);
 Vue.use(Vant)
@@ -20,6 +25,7 @@ Vue.use(Vant)
 Vue.prototype.axios = Axios;
 Vue.prototype.$md5 = md5;
 Vue.prototype.$callApp = callApp;
+Vue.prototype.transmit = transmit;
 Vue.config.productionTip = false
 Axios.defaults.headers.post["Content-Type"] =
     "application/json;charset=UTF-8"; //配置请求头信息。
@@ -37,6 +43,7 @@ new Vue({
 router.beforeEach((to, from, next) => {
     if (to.meta.requireAuth) {
         // 判断该路由是否需要登录权限
+        let AUTH_TOKEN = "11111";
         if (AUTH_TOKEN) {
             next();
         } else {
